@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <RelativeLayout
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/scroll">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/playerfaceimg"
+                android:background="@drawable/knightfaceimg"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Save Game"
+                android:id="@+id/menubutton"
+                android:layout_below="@+id/playerfaceimg"
+                android:onClick="saveGame"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:src="@drawable/wooden_sword"
+                android:id="@+id/wpnimg"
+                android:onClick="checkInventory"
+                android:layout_below="@+id/menubutton"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:text="Attack"
+                android:id="@+id/atkbutton"
+                android:onClick="attack"
+                android:layout_below="@+id/wpnimg"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:text="Special"
+                android:id="@+id/spbutton"
+                android:onClick="spATK"
+                android:layout_below="@+id/wpnimg"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="^"
+                android:id="@+id/ubut"
+                android:onClick="move"
+                android:background="@drawable/buttontile"
+                android:layout_below="@+id/atkbutton"
+                android:layout_centerHorizontal="true" />
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="&lt;"
+                android:id="@+id/lbut"
+                android:onClick="move"
+                android:background="@drawable/buttontile"
+                android:layout_below="@+id/ubut"
+                android:layout_toLeftOf="@+id/ubut"
+                android:layout_toStartOf="@+id/ubut" />
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text=">"
+                android:id="@+id/rbut"
+                android:onClick="move"
+                android:background="@drawable/buttontile"
+                android:layout_below="@+id/ubut"
+                android:layout_toRightOf="@+id/ubut"
+                android:layout_toEndOf="@+id/ubut" />
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="v"
+                android:id="@+id/dbut"
+                android:onClick="move"
+                android:background="@drawable/buttontile"
+                android:layout_below="@+id/rbut"
+                android:layout_toLeftOf="@+id/rbut"
+                android:layout_toStartOf="@+id/rbut" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/playerfaceimg"
+                android:layout_toEndOf="@+id/playerfaceimg">
+                <ProgressBar
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:progressBackgroundTint="#990000"
+                    android:progressTint="#ff0000"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="10dp"
+                    android:id="@+id/hpBar"
+                    android:max="100"
+                    android:progress="100"
+                    android:indeterminate="false"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="-5dp"
+                    android:text="0/0 HP"
+                    android:id="@+id/hpLabel" />
+
+                <ProgressBar
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:progressBackgroundTint="#000099"
+                    android:progressTint="#0000ff"
+                    android:layout_width="120dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/spBar"
+                    android:max="100"
+                    android:progress="100"
+                    android:indeterminate="false"
+                    android:layout_below="@+id/hpBar"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="-5dp"
+                    android:text="0/0 SP"
+                    android:id="@+id/spLabel"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textAlignment="center"
+                android:text="0"
+                android:id="@+id/movesCounter"
+                android:layout_alignTop="@+id/ubut"
+                android:layout_toLeftOf="@+id/ubut"
+                android:layout_toStartOf="@+id/ubut"
+                android:layout_above="@+id/lbut" />
+        </RelativeLayout>
+
+        <summerproject.game.BGGrid
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:id="@+id/gridbg"
+            android:onClick="onClick"
+            android:layout_alignParentTop="true" />
+    </LinearLayout>
+</RelativeLayout>
